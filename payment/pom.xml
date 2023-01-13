@@ -22,15 +22,20 @@
         <version>0.22.29</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>killbill-payment</artifactId>
+    <artifactId>killbill-payment-squaretrade</artifactId>
     <version>0.22.29-sqt1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>killbill-payment</name>
     <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>ST Releases</name>
+            <url>https://artifactory.squaretrade.com/artifactory/libs-release</url>
+        </repository>
         <snapshotRepository>
             <id>snapshots</id>
             <name>ST Snapshots</name>
-            <url>http://nexus.squaretrade.com/content/repositories/snapshots</url>
+            <url>https://artifactory.squaretrade.com/artifactory/libs-snapshot</url>
         </snapshotRepository>
     </distributionManagement>
     <properties>
@@ -267,13 +272,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <!-- Squaretrade nexus repository -->
-    <repositories>
-        <repository>
-            <id>snapshots</id>
-            <name>ST Snapshots</name>
-            <url>http://nexus.squaretrade.com/content/repositories/snapshots</url>
-        </repository>
-    </repositories>
 </project>
