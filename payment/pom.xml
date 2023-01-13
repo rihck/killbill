@@ -23,9 +23,18 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>killbill-payment</artifactId>
+    <version>0.22.29-sqt1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>killbill-payment</name>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>ST Snapshots</name>
+            <url>http://nexus.squaretrade.com/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
     <properties>
+        <killbill.version>0.22.29</killbill.version>
         <main.basedir>${project.parent.basedir}</main.basedir>
     </properties>
     <dependencies>
@@ -112,11 +121,13 @@
         <dependency>
             <groupId>org.kill-bill.billing</groupId>
             <artifactId>killbill-account</artifactId>
+            <version>${killbill.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.kill-bill.billing</groupId>
             <artifactId>killbill-account</artifactId>
+            <version>${killbill.version}</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
@@ -127,16 +138,19 @@
         <dependency>
             <groupId>org.kill-bill.billing</groupId>
             <artifactId>killbill-internal-api</artifactId>
+            <version>${killbill.version}</version>
         </dependency>
         <dependency>
             <groupId>org.kill-bill.billing</groupId>
             <artifactId>killbill-invoice</artifactId>
+            <version>${killbill.version}</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.kill-bill.billing</groupId>
             <artifactId>killbill-junction</artifactId>
+            <version>${killbill.version}</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
@@ -253,4 +267,13 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <!-- Squaretrade nexus repository -->
+    <repositories>
+        <repository>
+            <id>snapshots</id>
+            <name>ST Snapshots</name>
+            <url>http://nexus.squaretrade.com/content/repositories/snapshots</url>
+        </repository>
+    </repositories>
 </project>
